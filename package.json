@@ -1,14 +1,14 @@
 {
   "name": "atom-squib",
   "main": "./lib/atom-squib",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Snippets for squib development",
   "keywords": [
-      "squib",
-      "boardgames",
-      "cards",
-      "games",
-      "ruby"
+    "squib",
+    "boardgames",
+    "cards",
+    "games",
+    "ruby"
   ],
   "repository": "https://github.com/rnewton/atom-squib",
   "license": "MIT",

@@ -1,0 +1,168 @@
+".source.ruby":
+    "Squib::Deck.new":
+        "prefix": "Squib::Deck.new"
+        "body": """
+            Squib::Deck.new(cards: ${1:1}, layout: '${2:layout.yml}', config: '${3:config.yml}') do
+            	$4
+            end
+        """
+        "description": "The main interface to Squib. Yields to a block that is used for most of Squib’s operations."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/deck.html"
+
+    "background":
+        "prefix": "background"
+        "body": "background color: ${1::white}"
+        "description": "Fills the background with the given color"
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/background.html"
+
+    "build":
+        "prefix": "build"
+        "body": """
+            build ${1::pnp} do
+                $2
+            end
+        """
+        "description": "Establish a set of commands that can be enabled/disabled together to allow for customized builds."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/build.html"
+
+    "circle":
+        "prefix": "circle"
+        "body": "circle x: ${1:0}, y: ${2:0}, radius: ${3:100}"
+        "description": "Draw a partial or complete circle centered at the given coordinates"
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/circle.html"
+
+    "csv":
+        "prefix": "csv"
+        "body": "csv file: '${1:filename}.csv'"
+        "description": "Pulls CSV data from .csv files into a hash of arrays keyed by the headers."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/csv.html"
+
+    "curve":
+        "prefix": "curve"
+        "body": "curve x1: ${1:0}, y1: ${2:0}, x2: ${3:0}, y2: ${4:0}, cx1: ${5:0}, cy1: ${6:0}, cx2: ${7:0}, cy2: ${8:0}"
+        "description": "Draw a bezier curve using the given coordinates, from x1,y1 to x2,y2."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/curve.html"
+
+    "ellipse":
+        "prefix": "ellipse"
+        "body": "ellipse x: ${1:0}, y: ${2:0}, width: ${3:825}, height: ${4:1125}"
+        "description": "Draw an ellipse at the given coordinates."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/ellipse.html"
+
+    "grid":
+        "prefix": "grid"
+        "body": "grid x: ${1:0}, y: ${2:0}, width: ${3:150}, height: ${4:150}"
+        "description": "Draw an unlimited square grid of lines on the deck, starting with x,y and extending off the end of the deck."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/grid.html"
+
+    "hand":
+        "prefix": "hand"
+        "body": "hand range: ${1:0..3}, file: '${2:'hand'}.png'"
+        "description": "Renders a range of cards fanned out as if in a hand."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/hand.html"
+
+    "hint":
+        "prefix": "hint"
+        "body": "hint text: ${1::cyan}"
+        "description": "Toggle text hints globally."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/hint.html"
+
+    "line":
+        "prefix": "line"
+        "body": "line x1:${1:0}, x2:${2:0}, y1: ${3:100}, y2: ${3:100}"
+        "description": "Draw a line from x1,y1 to x2,y2."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/line.html"
+
+    "png":
+        "prefix": "png"
+        "body": "png file: '${1:filename}.png', x: ${2:0}, y: ${3:0}, width: ${4:300}, height: ${5:300}, layout: '${6:layout}'"
+        "description": "Renders PNG images."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/png.html"
+
+    "polygon":
+        "prefix": "polygon"
+        "body": "polygon n: ${1:6}, x: ${2:0}, y: ${3:0}, radius: ${4:100}"
+        "description": "Draw an n-sided regular polygon, centered at x,y."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/polygon.html"
+
+    "rect":
+        "prefix": "rect"
+        "body": "rect x: ${1:0}, y: ${2:0}, width: ${3:825}, height: ${4:1125}, radius: ${5:25}"
+        "description": "Draw a rounded rectangle."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/rect.html"
+
+    "save":
+        "prefix": "save"
+        "body": "save format: ${1::png}, prefix: '${2:card_}'"
+        "description": "Saves the given range of cards to either PNG or PDF."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/save.html"
+
+    "save_pdf":
+        "prefix": "save_pdf"
+        "body": "save_pdf file: '${1:deck}.pdf'"
+        "description": "Lays out the cards in a gride and renders a PDF."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/save_pdf.html"
+
+    "save_png":
+        "prefix": "save_png"
+        "body": "save_png prefix: '${1:card_}'"
+        "description": "Saves the given range of cards to a PNG"
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/save_png.html"
+
+    "save_sheet":
+        "prefix": "save_sheet"
+        "body": "save_sheet prefix: '${1:sheet_}', columns: ${2:4}, margin: ${3:75}, gap: ${4:5}, trim: ${5:37}"
+        "description": "Lays out the cards in range and renders a stitched PNG sheet."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/save_sheet.html"
+
+    "showcase":
+        "prefix": "showcase"
+        "body": "showcase file: '${1:showcase.png}', range: ${1:0..3}, fill_color: '${3:white}'"
+        "description": "Renders a range of cards in a showcase as if they are sitting in 3D on a reflective surface."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/showcase.html"
+
+    "star":
+        "prefix": "star"
+        "body": "star n: ${1:5}, x: ${2:0}, y: ${3:0}, inner_radius: ${4:100}, outer_radius: ${5:200}"
+        "description": "Draw an n-pointed star, centered at x,y."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/star.html"
+
+    "svg":
+        "prefix": "svg"
+        "body": "svg file: '${1:filename}.svg', x: ${2:0}, y: ${3:0}, width: ${4:300}, height: ${5:300}, layout: '${6:layout}'"
+        "description": "Renders an entire svg file at the given location."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/svg.html"
+
+    "text":
+        "prefix": "text"
+        "body": "text str: '$1', layout: '${2:layout}'"
+        "description": "Renders a string at a given location, width, alignment, font, etc."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/text.html"
+
+    "text_embed":
+        "prefix": "text_embed"
+        "body": """
+            text(str: '$1', markdown: true, layout: '${2:layout}') do |embed|
+                embed.${3:png} key: '${4:key}', file: '${5:file}.png'
+            end
+        """
+        "description": "Text block allows for embedding images into the flow of your text."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/text.html#embedded-icons"
+
+    "triangle":
+        "prefix": "triangle"
+        "body": "triangle x1: ${1:0}, y1: ${2:0}, x2: ${3:50}, y2: ${4:50}, x3: ${5:0}, y3: ${6:50}"
+        "description": "Draw a triangle at the given coordinates."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/triangle.html"
+
+    "xlsx":
+        "prefix": "xlsx"
+        "body": "xlsx file: '${1:filename}.xlsx'"
+        "description": "Pulls ExcelX data from .xlsx files into a hash of arrays keyed by the headers."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/xlsx.html"
+
+    "yaml":
+        "prefix": "yaml"
+        "body": "yaml file: '${1:filename}.yaml'"
+        "description": "Pulls deck data from a YAML files into a Squib::DataFrame (essentially a hash of arrays)."
+        "descriptionMoreURL": "http://squib.readthedocs.io/en/latest/dsl/yaml.html"
